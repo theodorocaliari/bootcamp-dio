@@ -8,7 +8,7 @@ const kmPorLitro = 8;
 const distanciaEmKm = 100;
 let valorViagem = 0;
 
-const litrosConsumidos = distanciaEmKm/kmPorLitro;
+const litrosConsumidos = distanciaEmKm / kmPorLitro;
 valorViagem = Math.round(litrosConsumidos * precoCombustivel);
 
 console.log(valorViagem);
