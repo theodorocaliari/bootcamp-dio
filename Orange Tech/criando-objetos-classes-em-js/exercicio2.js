@@ -12,8 +12,24 @@ class Pessoa {
   calculaImc() {
     return Math.round(this.peso / Math.pow(this.altura, 2));
   }
+  classificaImc(imc) {
+    if (imc > 40) {
+      return "obesidade grave";
+    } else if (imc > 30 && imc < 40) {
+      return "obeso";
+    } else if (imc > 25 && imc < 30) {
+      return "acima do peso";
+    } else if (imc > 18.5 && imc < 25) {
+      return "peso normal";
+    } else {
+      return "abaixo do peso";
+    }
+  }
+
   falarImc() {
-    return `Meu nome é ${this.nome} eu peso ${this.peso}kg e tenho ${this.altura}m de altura. Meu IMC é ${this.calculaImc()}`;
+    return `Meu nome é ${this.nome} eu peso ${this.peso}kg e tenho ${
+      this.altura
+    }m de altura. Meu IMC é ${this.calculaImc()} que é classificado como ${this.classificaImc(this.calculaImc())}.`;
   }
 }
 
