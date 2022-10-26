@@ -1,14 +1,45 @@
 .pokedex {
+
+
   ol {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    button {
+      background: #6c79bd;
+      border: none;
+      color: #fff;
+      max-width: 150px;
+      margin: 0 auto;
+      width: 100%;
+      border-radius: 50px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+
+      &:hover {
+        cursor: pointer;
+        background: darken(#6c79bd, 8%);
+      }
+    }
+
+  }
+
+
+
   .pokemons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 0.5rem;
+    margin-bottom: 20px;
 
     @media screen and(min-width:576px) {
       grid-template-columns: repeat(3, 1fr);
@@ -27,6 +58,7 @@
 
       &__name {
         margin-bottom: 0.25rem;
+        text-transform: capitalize;
       }
 
       &__number {
@@ -37,11 +69,13 @@
       }
 
       &__type {
-        background: #61e1ca;
+        //background: rgba(white, .3);
         border-radius: 1rem;
         padding: 0.25rem 0.5rem;
         font-size: 0.625rem;
         margin: 0.25rem 0;
+        text-align: center;
+        min-width: 40px;
 
       }
 
@@ -61,12 +95,42 @@
     }
   }
 
-  li[poketype="grass"] {
-    background: #49d0b8;
+  li[poketype] {
     box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
   }
 
-  li[poketype="fire"] {
-    background: red;
+  $typeColorMap: (
+    "normal": #A8A77A,
+    "fire": #ee8130,
+    "water": #6390f0,
+    "electric": #f7d02C,
+    "grass": #7AC74C,
+    "ice": #96d9d6,
+    "fighting": #C22e28,
+    "poison": #A33eA1,
+    "ground": #e2bf65,
+    "flying": #A98ff3,
+    "psychic": #f95587,
+    "bug": #A6b91A,
+    "rock": #b6A136,
+    "ghost": #735797,
+    "dragon": #6f35fC,
+    "dark": #705746,
+    "steel": #b7b7Ce,
+    "fairy": #d685Ad,
+    "unknown":#f4f4f4,
+    "shadow":#341a62
+  );
+
+@each $type,
+$color in $typeColorMap {
+  li[poketype="#{$type}"] {
+    background: $color;
   }
+
+  .#{$type} {
+    background: lighten($color, 10%);
+  }
+}
+
 }

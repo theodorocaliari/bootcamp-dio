@@ -1,25 +1,44 @@
-function convertPokemonTypeToLi(pokemonTypes) {
-  return pokemonTypes.map((typeSlot) => `<li class="pokemon__type">${typeSlot.type.name}</li>`);
-}
+const pokemonList = document.querySelector(".pokemons");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const maxRecords = 28;
+const limit = 12;
+let offset = 0;
 
 function convertPokemonToLi(pokemon) {
   return `
-    <li class="pokemon" poketype="grass">
-      <span class="pokemon__number">#${pokemon.order}</span>
+    <li class="pokemon " poketype="${pokemon.type}">
+      <span class="pokemon__number">#${pokemon.number}</span>
       <span class="pokemon__name">${pokemon.name}</span>
       <div class="pokemon__detail">
         <ol>
-          ${convertPokemonTypeToLi(pokemon.types).join("")}
+          ${pokemon.types.map((type) => `<li class="pokemon__type ${type}">${type}</li>`).join("")}
         </ol>
-        <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}" />
+        <img src="${pokemon.photo}" alt="${pokemon.name}" />
       </div>
     </li>
   `;
 }
 
-const pokemonList = document.querySelector(".pokemons");
+function loadPokemonItens(offset, limit) {
+  pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+    //debugger;
+    const newHtml = pokemons.map(convertPokemonToLi).join("");
+    pokemonList.innerHTML += newHtml;
+  });
+}
 
-pokeApi.getPokemons().then((pokemons = []) => {
+loadPokemonItens(offset, limit);
+
+loadMoreBtn.addEventListener("click", () => {
+  offset += limit;
   //debugger;
-  pokemonList.innerHTML = pokemons.map(convertPokemonToLi).join("");
+  const qtRecorNextPage = offset + limit;
+
+  if (qtRecorNextPage >= maxRecords) {
+    const newLimit = maxRecords - offset;
+    loadPokemonItens(offset, newLimit);
+    loadMoreBtn.parentElement.removeChild(loadMoreBtn);
+  } else {
+    loadPokemonItens(offset, limit);
+  }
 });
