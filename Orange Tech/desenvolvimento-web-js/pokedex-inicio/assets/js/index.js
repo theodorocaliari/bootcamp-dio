@@ -1,6 +1,6 @@
 const pokemonList = document.querySelector(".pokemons");
 const loadMoreBtn = document.getElementById("loadMoreBtn");
-const maxRecords = 28;
+const maxRecords = 151;
 const limit = 12;
 let offset = 0;
 

@@ -36,6 +36,12 @@ ssh-add <id da chave privada>
 git config --list
 ```
 
+#### Verificando qual branch de trabalho
+
+```terminal
+git branch
+```
+
 #### Excluindo propriedade configuracao no git local
 
 ```terminal
@@ -45,7 +51,13 @@ git config --global --unset <propriedade listada no comando acima>
 #### Iniciando o versionamento no git - move o arquivo para stage
 
 ```terminal
-  git add <nome arquivo ou * ou .>
+  git add <nome arquivo ou * ou . ou ./ (diretorio atual)>
+```
+
+#### Verificando o repositorio local
+
+```terminal
+git log --oneline
 ```
 
 #### Checkando a situação do arquivo(untrack, unchanged, modified, stage, commit)

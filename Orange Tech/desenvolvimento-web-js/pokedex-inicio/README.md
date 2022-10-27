@@ -6,7 +6,8 @@ Aula que ensina como utilizar o metodo fetch() do javascript que retorna promiss
 
 * fetch()
 * Classe
-*
+* Lista dinamica de pokemons
+* Paginação
 
 [Prototipo pokedex](https://dribbble.com/shots/6540871-Pokedex-App)
 [PokeApi](https://pokeapi.co/)

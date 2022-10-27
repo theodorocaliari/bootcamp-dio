@@ -1,0 +1,44 @@
+$textcolorPrimary: #282828;
+$textcolorSecondary: #90a4ae;
+$white: #fff;
+
+$typeColorMap: (
+  "normal": #A8A77A,
+  "fire": #ee8130,
+  "water": #6390f0,
+  "electric": #f7d02C,
+  "grass": #7AC74C,
+  "ice": #96d9d6,
+  "fighting": #C22e28,
+  "poison": #A33eA1,
+  "ground": #e2bf65,
+  "flying": #A98ff3,
+  "psychic": #f95587,
+  "bug": #A6b91A,
+  "rock": #b6A136,
+  "ghost": #735797,
+  "dragon": #6f35fC,
+  "dark": #705746,
+  "steel": #b7b7Ce,
+  "fairy": #d685Ad,
+  "unknown":#f4f4f4,
+  "shadow":#341a62
+);
+
+@each $type,
+$color in $typeColorMap {
+
+  [poketype="#{$type}"] {
+    background: $color;
+  }
+
+  .#{$type} {
+    background: lighten($color, 10%);
+  }
+
+  .pokemons {
+    [poketype="#{$type}"]:hover {
+      background: lighten($color, 5%);
+    }
+  }
+}
