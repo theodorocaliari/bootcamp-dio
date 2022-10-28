@@ -51,19 +51,13 @@ function fatorialDesajeitado(entrada) {
       }
 
       if (indiceOperacoes === 0 && i === entrada) {
-        retornoOperacao = Math.round(
-          listaOperadores[indiceOperacoes](i, i - 1)
-        );
+        retornoOperacao = Math.round(listaOperadores[indiceOperacoes](i, i - 1));
       } else {
-        retornoOperacao = Math.round(
-          listaOperadores[indiceOperacoes](retornoOperacao, i - 1)
-        );
+        retornoOperacao = Math.round(listaOperadores[indiceOperacoes](retornoOperacao, i - 1));
       }
 
       indiceOperacoes++;
-      console.log(
-        `indiceOperacoes: ${indiceOperacoes}; i: ${i}; retornoOperacao: ${retornoOperacao}`
-      );
+      console.log(`indiceOperacoes: ${indiceOperacoes}; i: ${i}; retornoOperacao: ${retornoOperacao}`);
     }
   }
 }

@@ -327,6 +327,47 @@
     }
   }
 
+  .progress-bar {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 95px;
+
+    &__bg {
+      background-color: #f4f4f4;
+      height: .3rem;
+      border-radius: 1rem;
+    }
+
+    &__bar {
+      position: absolute;
+      border-radius: 1rem;
+      top: 50%;
+      bottom: 0;
+      height: .2rem;
+      width: 50%;
+      transform: translateY(-50%);
+      animation: progress .5s ease-in-out;
+
+      @keyframes progress {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: var(--width);
+        }
+      }
+    }
+
+    &__content {
+      font-size: .525rem !important;
+    }
+  }
+
   [poketype] {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   }

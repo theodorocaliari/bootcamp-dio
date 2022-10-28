@@ -23,58 +23,36 @@
     <section class="container">
       <div class="pokedex">
         <div class="pokemon pokemondetail">
-          <div class="pokemon__header" poketype="grass">
-            <div class="pokemon__control">
-              <a href="#" onclick="history.back()" class="btn-back">
-                <i class="mdi mdi-arrow-left"></i>
-              </a>
-              <div class="btn-heart">
-                <i class="mdi mdi-cards-heart-outline"></i>
-              </div>
-            </div>
-            <div class="pokemon__header--grid">
-              <div class="name-types">
-                <div class="pokemon__name">Bulbasaur</div>
-                <ol class="pokemon__types">
-                  <li class="pokemon__type grass">Green</li>
-                  <li class="pokemon__type poison">Poison</li>
-                </ol>
-              </div>
-              <div class="number">
-                <div class="pokemon__number">#001</div>
-              </div>
-            </div>
+          <div id="header-injection"></div>
 
-            <div class="pokemon__photo">
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="" />
-            </div>
-          </div>
           <div class="pokemon__body">
             <div class="pokemon__tabgroup">
               <ul class="pokemon__tabs">
-                <li link-with="about" class="active">About</li>
-                <li link-with="base-stats">Base Stats</li>
+                <li link-with="about">About</li>
+                <li link-with="base-stats" class="active">Base Stats</li>
                 <li link-with="evolution">Evolution</li>
                 <li link-with="moves">Moves</li>
               </ul>
               <div class="pokemon__tabcontent">
-                <div class="pokemon__tab-body active" tab-link="about">
+                <div id="body-injection"></div>
+
+                <div class="pokemon__tab-body" tab-link="about">
                   <table border="0" width="100%">
                     <tr>
                       <td>Species</td>
-                      <td>Seed</td>
+                      <td class="pokemon-specie">Seed</td>
                     </tr>
                     <tr>
                       <td>Height</td>
-                      <td>2' 3.6" (0.70cm)</td>
+                      <td class="pokemon-height">2' 3.6" (0.70cm)</td>
                     </tr>
                     <tr>
                       <td>Weight</td>
-                      <td>15.2 lbs (6.9 kg)</td>
+                      <td class="pokemon-weight">15.2 lbs (6.9 kg)</td>
                     </tr>
                     <tr>
                       <td>Abilities</td>
-                      <td>Overfrow, Chiorophyl</td>
+                      <td class="pokemon-abilities">Overfrow, Chiorophyl</td>
                     </tr>
                   </table>
 
@@ -105,12 +83,18 @@
                     </tr>
                   </table>
                 </div>
-                <div class="pokemon__tab-body" tab-link="base-stats">
-                  <table>
+                <div class="pokemon__tab-body active" tab-link="base-stats">
+                  <table id="table-stats">
                     <tr>
                       <td>HP</td>
                       <td>45</td>
-                      <td>progressbar</td>
+                      <td>
+                        <div class="progress-bar">
+                          <div class="progress-bar__bg"></div>
+                          <div class="progress-bar__bar grass" style="width:50%; --width:50%;"></div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td>Attack</td>
@@ -162,6 +146,6 @@
     <script src="./assets/js/pokemon-model.js"></script>
     <script src="./assets/js/poke-api.js"></script>
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/pokemon-details.js"></script>
+    <script src="./assets/js/pokemon-details-tab.js"></script>
   </body>
 </html>
