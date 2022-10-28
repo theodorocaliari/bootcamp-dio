@@ -308,6 +308,7 @@
       table {
         font-size: 0.725rem;
         border-collapse: collapse;
+        width: 100%;
         border: none;
 
         td {
@@ -316,7 +317,7 @@
         }
 
         td:first-of-type {
-          width: 4.8rem;
+          width: 8rem;
           color: $textcolorSecondary;
         }
 
@@ -328,13 +329,32 @@
   }
 
   .progress-bar {
+    margin: 0;
     position: relative;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
 
-    width: 95px;
+    @media screen and (max-width:370px) {
+      width: 130px;
+    }
+
+    @media screen and(min-width:380px) {
+      width: 300px;
+    }
+
+    @media screen and (min-width:990px) {
+      width: 700px;
+    }
+
+
+
+
+
+
+
+
 
     &__bg {
       background-color: #f4f4f4;

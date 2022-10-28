@@ -106,7 +106,6 @@ function pokemonStatsHtml(pokemon) {
         <div class="progress-bar">
           <div class="progress-bar__bg"></div>
           <div class="progress-bar__bar ${pokemon.type}" style="width:${value}%; --width:${value}%;"></div>
-          </div>
         </div>
       </td>
     </tr>
