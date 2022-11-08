@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 750px;
+  max-width: 80%;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -38,6 +38,10 @@ export const SearchContainer = styled.div`
   border-radius: 8px;
   padding: 2px 5px;
   margin: 0 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Menu = styled.a`

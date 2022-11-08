@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonContainer } from "./styles";
+import { ButtonContainer } from "./btn-styles";
 
 const Button = ({title, variant="secondary", onClick}) => {
   return (
