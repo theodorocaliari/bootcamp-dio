@@ -1,4 +1,5 @@
 import React from "react";
+import logoDio  from "../../images/logo.svg";
 import { Button } from "../Button/btn-component";
 import {
   Wrapper,
@@ -7,7 +8,8 @@ import {
   SearchContainer,
   Menu,
   MenuRight,
-  Input
+  Input,
+  Logo
 } from "./header-styles";
 
 const Header = () => {
@@ -16,13 +18,12 @@ const Header = () => {
     <Wrapper>
       <Container>
         <Row>
-
+          <Logo src={logoDio} alt="Logo DIO"/>
           <SearchContainer>
             <Input placeholder="Buscar..." />
           </SearchContainer>
-          <Menu>Live Code</Menu>
-          <Menu>Global</Menu>
-
+          <Menu href="#">Live Code</Menu>
+          <Menu href="#">Global</Menu>
         </Row>
         <Row>
           <MenuRight href="#">Home</MenuRight>
