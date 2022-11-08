@@ -4,11 +4,9 @@ import {
   Wrapper,
   Container,
   Row,
-  Column,
   SearchContainer,
   Menu,
   MenuRight,
-  UserPicture,
   Input
 } from "./header-styles";
 
