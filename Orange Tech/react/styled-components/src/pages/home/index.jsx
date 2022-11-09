@@ -15,7 +15,9 @@ const Home = () => {
             <TitleHighlight>Implemente</TitleHighlight><br />
             o seu futuro global agora!
           </Title>
-          <TextContent>Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em continuidade com os melhores experts.</TextContent>
+          <TextContent>
+            Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em continuidade com os melhores experts.
+          </TextContent>
           <TextContent>
             <Button variant="primary" title="Começar agora" />
           </TextContent>
