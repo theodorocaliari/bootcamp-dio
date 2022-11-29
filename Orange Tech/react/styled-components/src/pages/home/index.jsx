@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/btn-component";
 import { Header } from "../../components/Header/header-component";
-//import imgBanner from "../../images/banner.png";
+import imgBanner from "../../images/banner.png";
 
 import { Container, Title, TextContent, TitleHighlight } from "./home-style";
 
@@ -23,7 +23,7 @@ const Home = () => {
           </TextContent>
         </div>
         <div>
-          <img src="{imgBanner}" alt="banner" />
+          <img src={imgBanner} alt="banner" />
         </div>
 
         

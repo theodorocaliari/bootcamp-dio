@@ -9,26 +9,43 @@ import {
   Menu,
   MenuRight,
   Input,
-  Logo
+  Logo,
+  UserPicture,
+  Column
 } from "./header-styles";
 
-const Header = () => {
+const Header = ({autenticado}) => {
   return (
   <>
     <Wrapper>
       <Container>
         <Row>
           <Logo src={logoDio} alt="Logo DIO"/>
-          <SearchContainer>
-            <Input placeholder="Buscar..." />
-          </SearchContainer>
-          <Menu href="#">Live Code</Menu>
-          <Menu href="#">Global</Menu>
+          {autenticado ? (
+            <>
+              <SearchContainer>
+                <Input placeholder="Buscar..." />
+              </SearchContainer>
+              <Menu href="#">Live Code</Menu>
+              <Menu href="#">Global</Menu>
+            </>
+          ) : null}
+
         </Row>
         <Row>
-          <MenuRight href="#">Home</MenuRight>
-          <Button title="Entrar"></Button>
-          <Button title="Cadastrar"></Button>
+
+          {autenticado ? (
+            <>
+            <UserPicture src="https://github.com/theodorocaliari.png" />
+            </>
+          ) : 
+          
+          <>
+            <MenuRight href="#">Home</MenuRight>
+            <Button title="Entrar"></Button>
+            <Button title="Cadastrar"></Button>
+          </> }
+
         </Row>
       </Container>
     </Wrapper>
