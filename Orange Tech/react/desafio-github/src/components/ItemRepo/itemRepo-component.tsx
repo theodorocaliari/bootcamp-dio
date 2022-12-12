@@ -21,7 +21,7 @@ export function ItemRepo({repo, handleRemoveRepo}:IItemRepo) {
             <p>{repo.full_name}</p>
           </div>
           <div className="actions">
-            <a className="remover" onClick={handleRemove}>Remover</a>
+            <a className="remover" key={repo.id} onClick={handleRemove}>Remover</a>
             <a href={repo.html_url} target="_blank" className="git-repo" rel="noreferrer">Ver repositório</a>
           </div>
         </div>

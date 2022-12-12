@@ -29,9 +29,15 @@ function App() {
     alert("Repositório não encontrado");
   };
 
-  const handleRemoveRepo = (id:number) =>{
-    console.log("Removendo registro", id);
-    
+  const handleRemoveRepo = (id:number) => {
+    const filtro = repos.map((atual:any) => atual.id === id);
+    //console.log(filtro);
+    if(filtro){
+      setRepos([]);
+    }
+    //onsole.log("filtro", filtro);
+
+    //console.log("Removendo registro", id);
   }
 
   const changeValue = (e:React.ChangeEvent<HTMLInputElement>) => setCurrentRepo(e.currentTarget.value);
@@ -47,8 +53,7 @@ function App() {
         Pesquisar
       </ButtonContainer>
       
-
-      {repos.map(repo => <ItemRepo handleRemoveRepo={handleRemoveRepo} repo={repo} />)}
+      {repos.map((repo:any) => <ItemRepo key={repo.id} handleRemoveRepo={handleRemoveRepo} repo={repo} />)}
       
 
     </Container>
