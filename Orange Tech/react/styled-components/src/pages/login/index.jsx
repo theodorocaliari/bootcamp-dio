@@ -48,7 +48,6 @@ const Login = () => {
           <Title>A plataforma para voce aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.</Title>
         </Column>
         <Column>
-        <Wrapper>
           <TitleLogin>Faça seu cadastro.</TitleLogin>
           <SubtitleLogin>Faça seu login e make de change._</SubtitleLogin>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -58,9 +57,8 @@ const Login = () => {
           </form>
           <Row>
             <EsqueciText>Esqueci minha Senha</EsqueciText>
-            <CriarText>Criar Conta</CriarText>
+            <a href="/singup"><CriarText>Criar Conta</CriarText></a>
           </Row>
-        </Wrapper>
 
         </Column>
       </Container>

@@ -9,6 +9,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 300px;
 `;
 
 export const Wrapper = styled.div`
@@ -22,9 +23,10 @@ export const Column = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  //justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  gap: 20px;
 `;
 
 //https://stackoverflow.com/questions/56651064/changing-tag-type-when-extending-component-in-styled-components
@@ -34,7 +36,7 @@ const ReaproveitandoCss = css`
   font-weight: 700;
   font-size: 32px;
   //width: 320px;
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
   line-height: 1.5;
   color: #fff;
 `;
@@ -51,7 +53,7 @@ export const TitleLogin = styled.p`
 export const SubtitleLogin = styled.p`
   ${ReaproveitandoCss}
   font-weight:normal;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 35px;
 `;
 

@@ -9,6 +9,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 300px;
 `;
 
 export const Wrapper = styled.div`
@@ -33,7 +34,7 @@ const ReaproveitandoCss = css`
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  width: 320px;
+  //width: 320px;
   margin-bottom: 20px;
   line-height: 1.5;
   color: #fff;

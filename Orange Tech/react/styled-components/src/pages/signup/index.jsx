@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header/header-component";
-import { Container,Title,TitleLogin,SubtitleLogin,Wrapper,Column,Row } from "./singup-style";
+import { Container,Title,TitleLogin,SubtitleLogin,Wrapper,Column,Row,CriarText } from "./singup-style";
 import { MdPerson, MdEmail, MdLock } from "react-icons/md";
 import { Input } from "../../components/Input/input-component";
 import { Button } from "../../components/Button/btn-component";
@@ -26,27 +26,25 @@ const Singup = () =>{
       <Container>
         <Column>
           <Title>
-          A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.
+            A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.
 
           </Title>
         </Column>
         <Column>
+        
         <TitleLogin>Comece agora grátis.</TitleLogin>
           <SubtitleLogin>Crie sua conta e make the change._</SubtitleLogin>
           <form>
             <Input name="nome" errorMessage={errors?.email?.message} control={control} placeholder="Nome completo" leftIcon={<MdPerson />}/>
             <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />}/>
             <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
-            <Button title="Entrar" variant="primary" type="submit"/>
+            <Button title="Criar minha conta" variant="primary" type="submit"/>
           </form>
           <Row>
-
-          <SubtitleLogin>
             Ao clicar em "criar minha conta", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.
-          </SubtitleLogin>
-          <SubtitleLogin>
-            Já tenho conta. Fazer login
-          </SubtitleLogin>    
+          </Row>
+          <Row>
+            Já tenho conta. <a href="/login"><CriarText>Fazer login</CriarText></a> 
           </Row>
         </Column>
 
